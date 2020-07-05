@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -199,7 +200,9 @@ public class GroupActivity extends AppCompatActivity {
                 Log.i("name=",name);
                 Log.i("full message=",chatMessage);
 
-                displayTextMessages.append(name+":"+"\n"+chatMessage+"\n\n");
+               displayTextMessages.append(Html.fromHtml("<b><font color=blue>"+ name +  "</font></b><br>"+ chatMessage +"<br><br>"));
+
+               // displayTextMessages.append(name+":"+"\n"+chatMessage+"\n\n");
                 mScrollView.fullScroll(ScrollView.FOCUS_DOWN);
             }
 // Log.i("message",name +":"+chatMessage);
